@@ -4,11 +4,12 @@
 
     define('API_KEY', 'rNcEB2DqR3mOAhv127aZJg');
     define('API_SECRET', 'mx4vArnkuJytttQ3I8yYrjHEUzz67Im6TyjT');
+    define('EXPIRATION_TIME', '60');
 
     function getZoomTokenJWT() {
         // Returns a JWT token for Zoom APP.
         $issuedAt = time();
-        $expirationTime = $issuedAt + 5 * 60; // We want the JWT token to expire in 60 secs.
+        $expirationTime = $issuedAt + EXPIRATION_TIME; // We want the JWT token to expire in 60 secs.
         $payload = array(
             "iss" => API_KEY,
             "exp" => $expirationTime,
